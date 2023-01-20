@@ -1,7 +1,6 @@
-/* importeer Poppins font van fonts.google.com */
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* importeer Helvetica font uit onze eigen mappen */
 @font-face {
 	font-family: 'Helvetica Neue';
 	src: url('../assets/HelveticaNeue.otf');
@@ -9,41 +8,28 @@
 	font-weight: 300;
 }
 
-/* CSS reset, deze zet standaard alle witruimte (margin en padding) op 0. Je moet dan zelf overal weer margin en padding toevoegen op de elementen waar je dit wel wilt hebben.
-   Ook zorgen we dat voor alle block elementen de afmetingen niet alleen worden bepaald door de content, maar dat ook padding en border meetellen. 
-   Dit ontwerpt makkelijker.
-   Zie: https://www.internetingishard.com/html-and-css/css-box-model/#content-boxes-and-border-boxes  */
-*,
+
+/* Tags */
 html {
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
 }
 
-/* Stel een witte achtergrond in en geef de body een beetje margin, relatief ten opzichte van het schermformaat.
-   Zet tevens een standaard lettertype wat overerft naar alle tags binnen de body, tenzij die zelf expliciet een ander lettertype krijgen. */
 body {
-	background-color: #FFFFFF;
-	background-image: url(../images/kring.png);
-	background-repeat: no-repeat;
-	background-position: 70% 90%;
-	margin: 5vh 5vw 5vh 5vw;
+	background-color: #FFFBF7;
 	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 1.0em;
 	color: #090806;
 	font-weight: 300;
+	display: flex;
 }
-
-/* onderstaande styles geven een voorbeeld hoe je de geimporteerde fonts kunt gebruiken.
-   Op je eigen website mag je natuurlijk andere lettertypes, groottes, en
-   kleuren, etc. voor deze tags gebruiken. */
 
 h1 {
 	font-family: 'Poppins', sans-serif;
 	font-size: 2em;
 	color: #864D43;
 	font-weight: 700;
-	/* bold */
 	margin-bottom: 0.3em;
 }
 
@@ -52,10 +38,15 @@ h2 {
 	font-size: 1.5em;
 	color: #6369AC;
 	font-weight: 700;
-	/* bold */
-	margin-bottom: 0.5em;
+	margin: 0;
 }
-h4{
+
+h3 {
+	display: inline;
+	margin: 0;
+}
+
+h4 {
 	z-index: 1;
 }
 
@@ -67,6 +58,14 @@ a {
 	color: #90C026;
 }
 
+ul {
+	display: flex;
+	margin-top: 2.5em;
+	padding: 0;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 li {
 	list-style-type: none;
 }
@@ -75,8 +74,44 @@ li {
 	border-radius: 10px;
 }
 
-/* css voor de carousel */
+.listName {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1em;
+	color: #6369AC;
+	font-weight: 700;
+	margin-bottom: 0;
+	width: 19em;
+}
 
+.list {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+
+.addButton {
+	text-align: center;
+}
+
+/* .button {
+	stukje opmaak hierzo
+} */
+
+.price {
+	text-align: right;
+}
+
+.flexbox-listA {
+	display: flex;
+	flex-direction: column;
+}
+
+.flexbox-listB {
+	display: flex;
+	flex-direction: row;
+}
+
+/* css voor de carousel */
 .slider {
 	width: 340px;
 	overflow: visible;
@@ -94,11 +129,11 @@ li {
 .slides::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
-	margin-top:5px;
+	margin-top: 5px;
 }
 
 .slides::-webkit-scrollbar-thumb {
-	background: #864D43;
+	background: #90C026;
 	border-radius: 10px;
 }
 
@@ -152,4 +187,92 @@ img {
 
 .slider>a:focus {
 	background: #000;
+}
+
+/* Animations */
+@keyframes backgroundCircle {
+	0% {
+		bottom: 100px
+	}
+
+	100% {
+		top: 100px
+	}
+}
+
+/* kleuren voor de carousel voor nu */
+
+#slide-2 {
+	background-color: #6369AC;
+}
+
+#slide-3 {
+	background-color: #864D43;
+}
+
+#slide-4 {
+	background-color: #90C026;
+}
+
+#slide-5 {
+	background-color: #FFDD33;
+}
+
+#slide-6 {
+	background-color: #6369AC;
+}
+
+#slide-7 {
+	background-color: #864D43;
+}
+
+#slide-8 {
+	background-color: #90C026;
+}
+
+
+/* Search bar */
+/* https://codepen.io/huange/pen/bGqMqM */
+.search {
+	margin-top: 0.5em;
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+
+.searchTerm {
+	width: 100%;
+	border: 3px solid #90C026;
+	border-right: none;
+	padding: 5px;
+	height: 20px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	color: #FFFBF7;
+}
+
+.searchTerm:focus {
+	color: #864D43;
+}
+
+.searchButton {
+	width: 2.5em;
+	border: 1px solid #90C026;
+	background: #90C026;
+	text-align: center;
+	color: #fff;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+	width: 80%;
+	position: absolute;
+	margin-top: 0.5em;
+	top: 1em;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
 }
