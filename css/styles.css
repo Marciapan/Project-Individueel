@@ -14,13 +14,14 @@ html {
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
+	flex-direction: row;
 }
 
 body {
 	background-color: #FFFBF7;
 	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 1.0em;
-	color: #090806;
+	color: #0A0A0A;
 	font-weight: 300;
 	display: flex;
 }
@@ -42,6 +43,8 @@ h2 {
 }
 
 h3 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.1em;
 	display: inline;
 	margin: 0;
 }
@@ -66,8 +69,77 @@ ul {
 	justify-content: center;
 }
 
+ol{
+	padding:0;
+	margin:0;
+}
+
 li {
 	list-style-type: none;
+}
+
+.name{
+	font-family: 'Baskerville';
+	font-size: 2em;
+	color: #90C026;
+	font-weight: 800;
+	margin-bottom:0;
+	margin-top:0.5em;
+}
+
+.subtext{
+	font-family: 'Helvetica Neue';
+    font-size: 1.1em;
+    color: #6369AC;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.flow{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.header{
+	height: 8%;
+	width: 107%;
+	background-color: #FFFBF7;
+}
+
+.flexbox-header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.footer{
+	height: 30%;
+	width: 107%;
+	background-color: #FFFBF7;
+	overflow: scroll;
+}
+
+.flexbox-footer{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.route{
+	padding: 0;
+	margin: 0;
+	margin-top:0.5em;
+	margin-bottom: 0.5em;
+}
+
+.map{
+	z-index: -1;
+}
+
+.mapdiv{
+	height:25em;
 }
 
 .market {
@@ -133,7 +205,7 @@ li {
 }
 
 .slides::-webkit-scrollbar-thumb {
-	background: #90C026;
+	background: #6369AC;
 	border-radius: 10px;
 }
 
@@ -144,8 +216,8 @@ li {
 .slides>div {
 	scroll-snap-align: start;
 	flex-shrink: 0;
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 120px;
 	margin-right: 10px;
 	border-radius: 10px;
 	background: #eee;
@@ -186,6 +258,84 @@ img {
 }
 
 .slider>a:focus {
+	background: #000;
+}
+
+/* small carousel */
+.sliderSmall {
+	width: 340px;
+	overflow: visible;
+}
+
+.slidesSmall {
+	margin-bottom: 10px;
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+}
+
+.slidesSmall::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	margin-top: 5px;
+}
+
+.slidesSmall::-webkit-scrollbar-thumb {
+	background: #FFDD33;
+	border-radius: 10px;
+}
+
+.slidesSmall::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.slidesSmall>div {
+	scroll-snap-align: start;
+	flex-shrink: 0;
+	width: 70px;
+	height: 70px;
+	margin-right: 10px;
+	border-radius: 10px;
+	background: #eee;
+	transform-origin: center center;
+	transform: scale(1);
+	transition: transform 0.5s;
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.sliderSmall>a {
+	display: inline-flex;
+	width: 1rem;
+	height: 1rem;
+	background: #6369AC;
+	text-decoration: none;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin: 0 0 0.5rem 0;
+	position: relative;
+}
+
+.sliderSmall>a:active {
+	top: 1px;
+}
+
+.sliderSmall>a:focus {
 	background: #000;
 }
 
