@@ -283,7 +283,7 @@ img {
 }
 
 .slidesSmall::-webkit-scrollbar-thumb {
-	background: #FFDD33;
+	background: #6369AC;
 	border-radius: 10px;
 }
 
@@ -349,37 +349,6 @@ img {
 		top: 100px
 	}
 }
-
-/* kleuren voor de carousel voor nu */
-
-#slide-2 {
-	background-color: #6369AC;
-}
-
-#slide-3 {
-	background-color: #864D43;
-}
-
-#slide-4 {
-	background-color: #90C026;
-}
-
-#slide-5 {
-	background-color: #FFDD33;
-}
-
-#slide-6 {
-	background-color: #6369AC;
-}
-
-#slide-7 {
-	background-color: #864D43;
-}
-
-#slide-8 {
-	background-color: #90C026;
-}
-
 
 /* Search bar */
 /* https://codepen.io/huange/pen/bGqMqM */
